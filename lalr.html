@@ -9,61 +9,54 @@
     <link rel="stylesheet" href="./lib/css/bootstrap.min.css">
     <link rel="stylesheet" href="./lib/css/ripples.min.css">
     <link rel="stylesheet" href="./lib/css/bootstrap-material-design.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/toolbox.css">
     <link rel="stylesheet" href="./css/lalr.css">
   </head>
-  <body>
-   
-
-    <div class="container-fluid container-body">
+<body class="bg-light">
+<div class="container">
 <!-- Body Begin -->
-<link rel="stylesheet" href="./css/automata.css">
+  <link rel="stylesheet" href="./css/automata.css">
 
-<div class="row">
-  <span class="col-md-2">
-    <div class="well">
-      <h4>Introduction</h4>
-      <hr>
-      <p>
-        Construct automaton and parsing table for LALR grammars.
-      </p>
-    </div>
-  </span>
-  <span class="col-md-5">
-    <div class="well">
-      <h4>Supported grammars</h4>
-      <ul>
-        <li>A -> A c | A a d | b d | ϵ <br>(All tokens must be separated by space characters)</li>
-        <li>A -> A c <br>&nbsp;&nbsp;&nbsp;| A a d <br>&nbsp;&nbsp;&nbsp;| b d <br>&nbsp;&nbsp;&nbsp;| ϵ </li>
-        <li>S -> A a | b<br>A -> A c | S d | ϵ</li>
-        <li>(Copy ϵ to input if needed)</li>
-      </ul>
-    </div>
-  </span>
-  <span class="col-md-5">
-    <div class="well">
-      <h4>Examples</h4>
-      <ul>
-        <li>S -> S S + | S S * | a</li>
-        <li>S -> 0 S 1 | 0 1</li>
-        <li>S -> + S S | * S S | a</li>
-        <li>S -> S ( S ) S | ϵ</li>
-        <li>S -> S + S | S S | ( S ) | S * | a</li>
-        <li>S -> ( L ) | a L -> L , S | S</li>
-        <li>S -> a S b S | b S a S | ϵ</li>
-        <li>
-            bexpr -> bexpr or bterm | bterm <br>
-            bterm -> bterm and bfactor | bfactor <br>
-            bfactor -> not bfactor | ( bexpr ) | true | false
-        </li>
-      </ul>
-    </div>
-  </span>
+  <h1 class="display-1 text-center"><strong>LALR PARSER</strong></h1>
+  <button class="btn btn-warning btn-lg m-3" data-bs-target="#data3" data-bs-toggle="collapse">Instructions</button>
+      <div id="data3" class=collapse>
+        <div class="card m-3 shadow text-black">
+          <div class="card-body">
+              <h4>Supported grammars</h4>
+              <ul>
+                <li>A -> A c | A a d | b d | ϵ <br>(All tokens must be separated by space characters)</li>
+                <li>A -> A c <br>&nbsp;&nbsp;&nbsp;| A a d <br>&nbsp;&nbsp;&nbsp;| b d <br>&nbsp;&nbsp;&nbsp;| ϵ </li>
+                <li>S -> A a | b<br>A -> A c | S d | ϵ</li>
+                <li>(Copy ϵ to input if needed)</li>
+              </ul>
+              <div class="well">
+                <h4>Examples</h4>
+                <ul>
+                  <li>S -> S S + | S S * | a</li>
+                  <li>S -> 0 S 1 | 0 1</li>
+                  <li>S -> + S S | * S S | a</li>
+                  <li>S -> S ( S ) S | ϵ</li>
+                  <li>S -> S + S | S S | ( S ) | S * | a</li>
+                  <li>S -> ( L ) | a L -> L , S | S</li>
+                  <li>S -> a S b S | b S a S | ϵ</li>
+                  <li>
+                      bexpr -> bexpr or bterm | bterm <br>
+                      bterm -> bterm and bfactor | bfactor <br>
+                      bfactor -> not bfactor | ( bexpr ) | true | false
+                  </li>
+                </ul>
+              </div>
+          </div>
+        </div>
+      </div>
 </div>
+
+   
 
 <div class="row">
   <div class="form-group">
-    <label for="input_grammar" class="col-md-1 control-label">Input: </label>
+    <label for="input_grammar" class="display-3 col-md-1 control-label text-black">Input: </label>
     <div class="col-md-11">
 <textarea type="text" class="form-control" id="input_grammar" rows="10" placeholder="">
 S -> C C
@@ -74,7 +67,7 @@ C -> c C | d
 </div>
 <div class="row">
   <div class="col-md-offset-10 col-md-2">
-    <button id="button_construct" class="btn btn-raised btn-block btn-primary">Construct</button>
+    <button id="button_construct" class="btn btn-raised btn-lg btn-block btn-primary m-5 float-end">Construct</button>
   </div>
 </div>
 <div id="alert_error" class="alert alert-dismissible alert-danger" hidden>
@@ -131,6 +124,9 @@ C -> c C | d
       ga('create', 'UA-75616109-2', 'auto');
       ga('send', 'pageview');
     </script>
-
+</div>
   </body>
-</html>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+  </html>
